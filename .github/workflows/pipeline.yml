@@ -1,0 +1,29 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+          node-version: 16.14.0
+      - name: Install Dependencies
+        run: npm ci
+      - name: Checkout Stylelint
+        run: npm run style
+      - name: Eslint Perse
+        run: npm run lint
+      - name: Build Deployment
+        if: ${{ github.event_name == 'push' }}
+        run: npm run build

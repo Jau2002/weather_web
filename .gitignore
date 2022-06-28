@@ -1,0 +1,5 @@
+# Environment Variables
+.env
+# Default Files
+node_modules/
+dist/
