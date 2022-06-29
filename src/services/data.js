@@ -13,7 +13,7 @@ async function data(city, setCities) {
 					latitud: res.data.coord.lat,
 					weather: res.data.weather[0].main,
 					description: res.data.weather[0].description,
-					image: res.data.weather[0].icon,
+					imgMeteorology: res.data.weather[0].icon,
 					base: res.data.base,
 					temp: res.data.main.temp,
 					temperatureMinimum: Math.round(res.data.main.temp_min),
