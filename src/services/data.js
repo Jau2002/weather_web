@@ -8,7 +8,6 @@ async function data(city, setCities) {
 		)
 		.then(res => {
 			if (res.data) {
-				console.log(res.data);
 				const weatherData = {
 					longitud: res.data.coord.lon,
 					latitud: res.data.coord.lat,
