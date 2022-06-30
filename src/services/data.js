@@ -11,10 +11,8 @@ async function data(city, setCities) {
 				const weatherData = {
 					longitud: res.data.coord.lon,
 					latitud: res.data.coord.lat,
-					weather: res.data.weather[0].main,
-					description: res.data.weather[0].description,
 					imgMeteorology: res.data.weather[0].icon,
-					base: res.data.base,
+					description: res.data.weather[0].description,
 					temp: res.data.main.temp,
 					temperatureMinimum: Math.round(res.data.main.temp_min),
 					temperatureMaximum: Math.round(res.data.main.temp_max),
@@ -25,8 +23,7 @@ async function data(city, setCities) {
 					abbreviation: res.data.sys.country,
 					timeZone: res.data.timezone,
 					id: res.data.id,
-					stateRecognized: res.data.name,
-					clouds: res.data.clouds.all
+					stateRecognized: res.data.name
 				};
 				setCities(prevCities =>
 					prevCities.some(

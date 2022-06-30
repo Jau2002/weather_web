@@ -1,6 +1,6 @@
 import Card from './Card';
 
-function Cards({ cities, onRemove }) {
+function Cards({ cities, onRemove, moreInfo, reverse }) {
 	return (
 		<section>
 			{cities &&
@@ -16,6 +16,15 @@ function Cards({ cities, onRemove }) {
 						pressureAtmosphere={c.pressureAtmosphere}
 						humidity={c.humidity}
 						windSpeed={c.windSpeed}
+						moreInfo={() => moreInfo()}
+						reverse={reverse}
+						description={c.description}
+						longitud={c.longitud}
+						latitud={c.latitud}
+						temp={c.temp}
+						windDegrees={c.windDegrees}
+						timeZone={c.timeZone}
+						clouds={c.clouds}
 					/>
 				))}
 		</section>
