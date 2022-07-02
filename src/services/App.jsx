@@ -1,4 +1,4 @@
-import '../styles.css';
+// import '../styles.css';
 import { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import data from './data';
@@ -13,7 +13,7 @@ function App() {
 	};
 
 	const onRemove = id => {
-		setCities(prevCities => prevCities.filter(c => c.id === id));
+		setCities(prevCities => prevCities.filter(c => c.id !== id));
 	};
 
 	const moreInfo = () => {
