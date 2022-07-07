@@ -1,8 +1,8 @@
-// import '../styles.css';
+import '../styles.css';
 import { useState } from 'react';
-import SearchBar from '../components/SearchBar';
 import data from './data';
 import Cards from '../components/Cards';
+import Nav from '../components/Nav';
 
 function App() {
 	const [cities, setCities] = useState([]);
@@ -22,8 +22,7 @@ function App() {
 
 	return (
 		<main className='styles'>
-			<h1>skeleton template</h1>
-			<SearchBar onSearch={onSearch} />
+			<Nav onSearch={onSearch} />
 			<Cards
 				onRemove={onRemove}
 				cities={cities}
